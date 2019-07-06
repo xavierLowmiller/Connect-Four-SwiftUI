@@ -6,10 +6,18 @@
 //  Copyright © 2019 Xaver Lohmüller. All rights reserved.
 //
 
-final class Game {
+import SwiftUI
+import Combine
 
-    private(set) var board: [[Cell]]
-    private(set) var activePlayer: Player = .red
+final class Game: BindableObject {
+    let didChange = PassthroughSubject<Void, Never>()
+
+    private(set) var board: [[Cell]] {
+        didSet { didChange.send(()) }
+    }
+    private(set) var activePlayer: Player = .red {
+        didSet { didChange.send(()) }
+    }
 
     init(columns: Int, rows: Int) {
         let emptyRow = [Cell](repeating: .empty, count: rows)
