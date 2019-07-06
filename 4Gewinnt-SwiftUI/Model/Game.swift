@@ -34,6 +34,19 @@ final class Game: BindableObject {
     }
 
     var winner: Player? {
+        for player in Player.allCases {
+            // Check horizontal win
+            for x in 0..<board.count - 3 {
+                for y in 0..<board[0].count {
+                    if board[x][y] == player.cell,
+                        board[x + 1][y] == player.cell,
+                        board[x + 2][y] == player.cell,
+                        board[x + 3][y] == player.cell {
+                        return player
+                    }
+                }
+            }
+        }
         return nil
     }
 

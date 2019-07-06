@@ -6,7 +6,7 @@
 //  Copyright © 2019 Xaver Lohmüller. All rights reserved.
 //
 
-enum Player {
+enum Player: CaseIterable {
     case red, yellow
 
     mutating func toggle() {

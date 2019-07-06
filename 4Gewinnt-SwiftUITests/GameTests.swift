@@ -62,6 +62,24 @@ class GameTests: XCTestCase {
         // Then
         XCTAssertFalse(game.isColumnSelectable(2))
     }
+
+    func testHorizontalWinsShouldBeRecognized() {
+        // Given
+        let game = Game(columns: 7, rows: 6)
+        let initiallyActivePlayer = game.activePlayer
+
+        // When
+        game.insert(at: 0)
+        game.insert(at: 0)
+        game.insert(at: 1)
+        game.insert(at: 1)
+        game.insert(at: 2)
+        game.insert(at: 2)
+        game.insert(at: 3)
+
+        // Then
+        XCTAssertEqual(game.winner, initiallyActivePlayer)
+    }
 }
 
 private extension Game {
