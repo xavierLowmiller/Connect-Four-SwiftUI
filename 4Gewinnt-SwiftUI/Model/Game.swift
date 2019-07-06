@@ -46,6 +46,18 @@ final class Game: BindableObject {
                     }
                 }
             }
+
+            // Check vertical win
+            for x in 0..<board.count {
+                for y in 0..<board[0].count - 3 {
+                    if board[x][y] == player.cell,
+                        board[x][y + 1] == player.cell,
+                        board[x][y + 2] == player.cell,
+                        board[x][y + 3] == player.cell {
+                        return player
+                    }
+                }
+            }
         }
         return nil
     }

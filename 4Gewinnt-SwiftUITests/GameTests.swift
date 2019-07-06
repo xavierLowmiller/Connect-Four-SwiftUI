@@ -80,6 +80,24 @@ class GameTests: XCTestCase {
         // Then
         XCTAssertEqual(game.winner, initiallyActivePlayer)
     }
+
+    func testVerticalWinsShouldBeRecognized() {
+        // Given
+        let game = Game(columns: 7, rows: 6)
+        let initiallyActivePlayer = game.activePlayer
+
+        // When
+        game.insert(at: 6)
+        game.insert(at: 1)
+        game.insert(at: 6)
+        game.insert(at: 1)
+        game.insert(at: 6)
+        game.insert(at: 1)
+        game.insert(at: 6)
+
+        // Then
+        XCTAssertEqual(game.winner, initiallyActivePlayer)
+    }
 }
 
 private extension Game {
