@@ -58,6 +58,30 @@ final class Game: BindableObject {
                     }
                 }
             }
+
+            // Check for diagonal ascending win
+            for x in 0..<board.count - 3 {
+                for y in 3..<board[0].count {
+                    if board[x][y] == player.cell,
+                        board[x + 1][y - 1] == player.cell,
+                        board[x + 2][y - 2] == player.cell,
+                        board[x + 3][y - 3] == player.cell {
+                        return player
+                    }
+                }
+            }
+
+            // Check for diagonal ascending win
+            for x in 0..<board.count - 3 {
+                for y in 0..<board[0].count - 3 {
+                    if board[x][y] == player.cell,
+                        board[x + 1][y + 1] == player.cell,
+                        board[x + 2][y + 2] == player.cell,
+                        board[x + 3][y + 3] == player.cell {
+                        return player
+                    }
+                }
+            }
         }
         return nil
     }

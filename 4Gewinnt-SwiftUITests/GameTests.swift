@@ -63,6 +63,14 @@ class GameTests: XCTestCase {
         XCTAssertFalse(game.isColumnSelectable(2))
     }
 
+    /**
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     🔶🔶🔶⚪️⚪️⚪️⚪️
+     🔴🔴🔴🔴⚪️⚪️⚪️
+     */
     func testHorizontalWinsShouldBeRecognized() {
         // Given
         let game = Game(columns: 7, rows: 6)
@@ -81,6 +89,14 @@ class GameTests: XCTestCase {
         XCTAssertEqual(game.winner, initiallyActivePlayer)
     }
 
+    /**
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️🔴
+     ⚪️🔶⚪️⚪️⚪️⚪️🔴
+     ⚪️🔶⚪️⚪️⚪️⚪️🔴
+     ⚪️🔶⚪️⚪️⚪️⚪️🔴
+     */
     func testVerticalWinsShouldBeRecognized() {
         // Given
         let game = Game(columns: 7, rows: 6)
@@ -94,6 +110,66 @@ class GameTests: XCTestCase {
         game.insert(at: 6)
         game.insert(at: 1)
         game.insert(at: 6)
+
+        // Then
+        XCTAssertEqual(game.winner, initiallyActivePlayer)
+    }
+
+    /**
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️🔴⚪️⚪️
+     ⚪️⚪️⚪️🔴🔶⚪️⚪️
+     ⚪️⚪️🔴🔶🔶⚪️⚪️
+     ⚪️🔴🔶🔶🔴🔴⚪️
+     */
+    func testDiagonalAscendingWinsShouldBeRecognized() {
+        // Given
+        let game = Game(columns: 7, rows: 6)
+        let initiallyActivePlayer = game.activePlayer
+
+        // When
+        game.insert(at: 1)
+        game.insert(at: 2)
+        game.insert(at: 2)
+        game.insert(at: 3)
+        game.insert(at: 4)
+        game.insert(at: 3)
+        game.insert(at: 3)
+        game.insert(at: 4)
+        game.insert(at: 5)
+        game.insert(at: 4)
+        game.insert(at: 4)
+
+        // Then
+        XCTAssertEqual(game.winner, initiallyActivePlayer)
+    }
+
+    /**
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️🔴⚪️⚪️⚪️⚪️⚪️
+     ⚪️🔶🔴⚪️⚪️⚪️⚪️
+     ⚪️🔴🔶🔴⚪️⚪️⚪️
+     🔶🔴🔶🔶🔴⚪️⚪️
+     */
+    func testDiagonalDescendingWinsShouldBeRecognized() {
+        // Given
+        let game = Game(columns: 7, rows: 6)
+        let initiallyActivePlayer = game.activePlayer
+
+        // When
+        game.insert(at: 4)
+        game.insert(at: 3)
+        game.insert(at: 3)
+        game.insert(at: 2)
+        game.insert(at: 1)
+        game.insert(at: 2)
+        game.insert(at: 1)
+        game.insert(at: 1)
+        game.insert(at: 2)
+        game.insert(at: 0)
+        game.insert(at: 1)
 
         // Then
         XCTAssertEqual(game.winner, initiallyActivePlayer)
