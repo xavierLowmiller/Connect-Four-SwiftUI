@@ -13,7 +13,16 @@ struct GameView : View {
 
     var body: some View {
         VStack {
-            Text("\(game.activePlayer.description)'s turn")
+
+            HStack {
+                Spacer()
+                Text("Up next:")
+                    .font(.largeTitle)
+                    .padding(.top)
+                Circle()
+                    .foregroundColor(game.activePlayer == .red ? .red : .yellow)
+                Spacer()
+            }.padding(.top, 25)
 
             HStack(spacing: 0) {
 
