@@ -1,13 +1,13 @@
 //
 //  GameTests.swift
-//  4Gewinnt-SwiftUITests
+//  Connect-Four-SwiftUITests
 //
 //  Created by Xaver Lohmüller on 05.07.19.
 //  Copyright © 2019 Xaver Lohmüller. All rights reserved.
 //
 
 import XCTest
-@testable import _Gewinnt_SwiftUI
+@testable import Connect_Four_SwiftUI
 
 class GameTests: XCTestCase {
     func testInsertingShouldInsertACellAndToggleTheActivePlayer() {

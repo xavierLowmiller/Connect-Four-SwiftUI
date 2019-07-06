@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:4Gewinnt-SwiftUI.xcodeproj">
+      location = "self:Connect-Four-SwiftUI.xcodeproj">
    </FileRef>
 </Workspace>

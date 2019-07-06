@@ -1,6 +1,6 @@
 //
 //  WinnerView.swift
-//  4Gewinnt-SwiftUI
+//  Connect-Four-SwiftUI
 //
 //  Created by Xaver Lohmüller on 06.07.19.
 //  Copyright © 2019 Xaver Lohmüller. All rights reserved.

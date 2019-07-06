@@ -1,14 +1,14 @@
 //
-//  _Gewinnt_SwiftUIUITests.swift
-//  4Gewinnt-SwiftUIUITests
+//  Connect_Four_SwiftUIUITests.swift
+//  Connect-Four-SwiftUIUITests
 //
-//  Created by Xaver Lohmüller on 05.07.19.
+//  Created by Xaver Lohmüller on 06.07.19.
 //  Copyright © 2019 Xaver Lohmüller. All rights reserved.
 //
 
 import XCTest
 
-class _Gewinnt_SwiftUIUITests: XCTestCase {
+class Connect_Four_SwiftUIUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

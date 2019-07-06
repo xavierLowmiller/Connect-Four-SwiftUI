@@ -1,27 +1,30 @@
 //
-//  Player.swift
-//  4Gewinnt-SwiftUI
+//  Cell.swift
+//  Connect-Four-SwiftUI
 //
 //  Created by Xaver Lohmüller on 05.07.19.
 //  Copyright © 2019 Xaver Lohmüller. All rights reserved.
 //
 
-enum Player: CaseIterable {
-    case red, yellow
+enum Cell {
+    case red, yellow, empty
+}
 
-    mutating func toggle() {
+extension Player {
+    var cell: Cell {
         switch self {
-        case .red: self = .yellow
-        case .yellow: self = .red
+        case .red: return .red
+        case .yellow: return .yellow
         }
     }
 }
 
-extension Player: CustomStringConvertible {
+extension Cell: CustomStringConvertible {
     var description: String {
         switch self {
         case .red: return "🔴"
         case .yellow: return "🔶"
+        case .empty: return "⚪️"
         }
     }
 }
