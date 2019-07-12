@@ -174,6 +174,32 @@ class GameTests: XCTestCase {
         // Then
         XCTAssertEqual(game.winner, initiallyActivePlayer)
     }
+
+    /**
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️⚪️⚪️⚪️⚪️⚪️⚪️
+     ⚪️🔶⚪️⚪️⚪️⚪️⚪️
+     ⚪️🔶⚪️⚪️⚪️⚪️🔴
+     ⚪️🔶⚪️⚪️⚪️⚪️🔴
+     ⚪️🔶⚪️⚪️⚪️🔴🔴
+     */
+    func testYellowWinShouldAlsoBePossible() {
+        // Given
+        let game = Game(columns: 7, rows: 6)
+
+        // When
+        game.insert(at: 6)
+        game.insert(at: 1)
+        game.insert(at: 6)
+        game.insert(at: 1)
+        game.insert(at: 6)
+        game.insert(at: 1)
+        game.insert(at: 5)
+        game.insert(at: 1)
+
+        // Then
+        XCTAssertEqual(game.winner, .yellow)
+    }
 }
 
 private extension Game {
