@@ -16,6 +16,7 @@ struct WinnerView : View {
             CellView(cell: winner == .red ? .red : .yellow)
                 .accessibility(label: Text(winner == .red ? "red" : "yellow"))
             Text("won the game")
+                .font(.largeTitle)
         }.padding()
     }
 }

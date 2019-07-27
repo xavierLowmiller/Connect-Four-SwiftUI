@@ -18,7 +18,6 @@ struct BoardView : View {
                 Spacer()
                 Text("Up next:")
                     .font(.largeTitle)
-                    .padding(.top)
                 CellView(cell: game.activePlayer == .red ? .red : .yellow)
                     .accessibility(label: Text(game.activePlayer == .red ? "red" : "yellow"))
                 Spacer()
