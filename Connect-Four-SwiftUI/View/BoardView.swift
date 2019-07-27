@@ -26,10 +26,10 @@ struct BoardView : View {
 
             HStack(spacing: 0) {
 
-                ForEach(Array(game.board.enumerated()).identified(by: \.offset)) { (offset, column) in
+                ForEach(Array(game.board.enumerated()), id: \.offset) { (offset, column) in
 
                     VStack(spacing: 0) {
-                        ForEach(column.identified(by: \.self)) { cell in
+                        ForEach(Array(column.enumerated()), id: \.offset) { (offset, cell) in
                             CellView(cell: cell)
                         }
                     }.tapAction {

@@ -10,13 +10,14 @@ import SwiftUI
 import Combine
 
 final class Game: BindableObject {
-    let didChange = PassthroughSubject<Void, Never>()
+
+    let willChange = PassthroughSubject<Void, Never>()
 
     private(set) var board: [[Cell]] {
-        didSet { didChange.send(()) }
+        didSet { willChange.send(()) }
     }
     private(set) var activePlayer: Player = .red {
-        didSet { didChange.send(()) }
+        didSet { willChange.send(()) }
     }
 
     init(columns: Int, rows: Int) {
