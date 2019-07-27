@@ -13,8 +13,8 @@ struct WinnerView : View {
 
     var body: some View {
         VStack {
-            Circle().foregroundColor(winner == .red ? .red : .yellow)
-                .frame(width: 80, height: 80)
+            CellView(cell: winner == .red ? .red : .yellow)
+                .accessibility(label: Text(winner == .red ? "red" : "yellow"))
             Text("won the game")
         }.padding()
     }

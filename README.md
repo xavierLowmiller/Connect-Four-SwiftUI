@@ -4,7 +4,7 @@ An exercise in SwiftUI
 
 ## TODO:
 - [x] Basic Game Logic
-- [ ] Accessibility
+- [x] Accessibility
 - [ ] Layout
 - [ ] Animations
 - [ ] Internationalization

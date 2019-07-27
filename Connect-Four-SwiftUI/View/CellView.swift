@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct CellView : View {
-    let cell: Cell
+    let cell: Token
 
     var body: some View {
         Circle()
@@ -20,7 +20,7 @@ struct CellView : View {
     }
 }
 
-extension Cell {
+extension Token {
     var color: Color {
         switch self {
         case .red: return .red
