@@ -34,6 +34,11 @@ final class Game: BindableObject {
         activePlayer.toggle()
     }
 
+    func reset() {
+        board = board.map { $0.map { _ in return .empty }}
+        activePlayer = .red
+    }
+
     var winner: Player? {
         for player in Player.allCases {
             // Check horizontal win

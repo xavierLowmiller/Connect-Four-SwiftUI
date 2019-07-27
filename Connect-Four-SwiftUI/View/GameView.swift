@@ -17,6 +17,7 @@ struct GameView : View {
                 BoardView(game: game)
             } else {
                 WinnerView(winner: game.winner!)
+                    .tapAction { self.game.reset() }
             }
         }
     }

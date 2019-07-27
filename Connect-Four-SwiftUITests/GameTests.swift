@@ -200,6 +200,35 @@ class GameTests: XCTestCase {
         // Then
         XCTAssertEqual(game.winner, .yellow)
     }
+
+    func testResetShouldResetTheBoard() {
+        // Given
+        let game = Game(columns: 7, rows: 6)
+        for _ in 0..<10 {
+            game.insert(at: Int.random(in: 0..<game.board.count))
+        }
+        XCTAssertGreaterThan(game.amountOfFilledCells, 0)
+
+        // When
+        game.reset()
+
+        // Then
+        XCTAssertEqual(game.amountOfFilledCells, 0)
+    }
+
+    func testResettingShouldRestoreTheInitiallyActivePlayer() {
+        // Given
+        let game = Game(columns: 6, rows: 7)
+        let initialPlayer = game.activePlayer
+        game.insert(at: Int.random(in: 0..<game.board.count))
+        XCTAssertNotEqual(initialPlayer, game.activePlayer)
+
+        // When
+        game.reset()
+
+        // Then
+        XCTAssertEqual(initialPlayer, game.activePlayer)
+    }
 }
 
 private extension Game {
