@@ -17,7 +17,7 @@
 		4EA01B0922D0791200530C22 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4F4AD622D078A800D48C2D /* GameView.swift */; };
 		4EA01B0A22D0791200530C22 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4F4AD722D078A800D48C2D /* WinnerView.swift */; };
 		4EA01B0F22D0796700530C22 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA01B0C22D0796700530C22 /* Game.swift */; };
-		4EA01B1022D0796700530C22 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA01B0D22D0796700530C22 /* Cell.swift */; };
+		4EA01B1022D0796700530C22 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA01B0D22D0796700530C22 /* Token.swift */; };
 		4EA01B1122D0796700530C22 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA01B0E22D0796700530C22 /* Player.swift */; };
 		4EA01B1322D0798100530C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA01B1222D0798100530C22 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
@@ -57,7 +57,7 @@
 		4E4F4AD922D078C400D48C2D /* BoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		4EA01B0522D078F200530C22 /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		4EA01B0C22D0796700530C22 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		4EA01B0D22D0796700530C22 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		4EA01B0D22D0796700530C22 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		4EA01B0E22D0796700530C22 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		4EA01B1222D0798100530C22 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				4EA01B0C22D0796700530C22 /* Game.swift */,
-				4EA01B0D22D0796700530C22 /* Cell.swift */,
+				4EA01B0D22D0796700530C22 /* Token.swift */,
 				4EA01B0E22D0796700530C22 /* Player.swift */,
 			);
 			path = Model;
@@ -304,7 +304,7 @@
 			files = (
 				4EA01B1322D0798100530C22 /* AppDelegate.swift in Sources */,
 				4EA01B0F22D0796700530C22 /* Game.swift in Sources */,
-				4EA01B1022D0796700530C22 /* Cell.swift in Sources */,
+				4EA01B1022D0796700530C22 /* Token.swift in Sources */,
 				4EA01B0A22D0791200530C22 /* WinnerView.swift in Sources */,
 				4EA01B1122D0796700530C22 /* Player.swift in Sources */,
 				4EA01B0822D0791200530C22 /* CellView.swift in Sources */,

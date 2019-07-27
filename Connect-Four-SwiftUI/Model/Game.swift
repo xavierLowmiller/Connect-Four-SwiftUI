@@ -13,7 +13,7 @@ final class Game: BindableObject {
 
     let willChange = PassthroughSubject<Void, Never>()
 
-    private(set) var board: [[Cell]] {
+    private(set) var board: [[Token]] {
         didSet { willChange.send(()) }
     }
     private(set) var activePlayer: Player = .red {
@@ -21,8 +21,8 @@ final class Game: BindableObject {
     }
 
     init(columns: Int, rows: Int) {
-        let emptyRow = [Cell](repeating: .empty, count: rows)
-        board = [[Cell]](repeating: emptyRow, count: columns)
+        let emptyRow = [Token](repeating: .empty, count: rows)
+        board = [[Token]](repeating: emptyRow, count: columns)
     }
 
     func insert(at column: Int) {

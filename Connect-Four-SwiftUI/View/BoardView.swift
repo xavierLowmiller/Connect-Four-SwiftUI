@@ -19,27 +19,35 @@ struct BoardView : View {
                 Text("Up next:")
                     .font(.largeTitle)
                     .padding(.top)
-                Circle()
-                    .foregroundColor(game.activePlayer == .red ? .red : .yellow)
+                CellView(cell: game.activePlayer == .red ? .red : .yellow)
+                    .accessibility(label: Text(game.activePlayer == .red ? "red" : "yellow"))
                 Spacer()
             }.padding(.top, 25)
 
             HStack(spacing: 0) {
 
-                ForEach(Array(game.board.enumerated()), id: \.offset) { (offset, column) in
+                ForEach(Array(game.board.enumerated()), id: \.offset) { (xOffset, column) in
 
-                    VStack(spacing: 0) {
-                        ForEach(Array(column.enumerated()), id: \.offset) { (offset, cell) in
-                            CellView(cell: cell)
+                    ZStack {
+                        Color.blue
+                        VStack(spacing: 0) {
+                            ForEach(Array(column.enumerated()), id: \.offset) { (yOffset, cell) in
+                                CellView(cell: cell)
+                            }
                         }
-                    }.tapAction {
-                        self.game.insert(at: offset)
                     }
+                    .tapAction {
+                        self.game.insert(at: xOffset)
+                    }
+                    .accessibility(label: Text("Column \(xOffset + 1)"))
+                    .accessibility(value: Text(column.accessibilityDescription))
+                    .accessibility(hint: Text("Tap to drop your token"))
+                    .accessibility(addTraits: .allowsDirectInteraction)
+                    .accessibilityAction { self.game.insert(at: xOffset) }
                 }
 
             }
             .padding(8)
-            .background(Color.blue)
         }
     }
 }

@@ -10,25 +10,49 @@ import XCTest
 
 class Connect_Four_SwiftUIUITests: XCTestCase {
 
+    let app = XCUIApplication()
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
-
-        // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app.launch()
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testRedWin() {
+        let column1 = app.windows.otherElements["Column 1"].firstMatch
+        let column2 = app.windows.otherElements["Column 2"].firstMatch
+
+        column1.click()
+        column2.click()
+        column1.click()
+        column2.click()
+        column1.click()
+        column2.click()
+        column1.click()
+
+        XCTAssert(app.windows.otherElements["red"].exists)
+        XCTAssert(app.windows.staticTexts["won the game"].exists)
     }
 
-    func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testYellowWin() {
+        let column4 = app.windows.otherElements["Column 4"].firstMatch
+        let column5 = app.windows.otherElements["Column 5"].firstMatch
+        let column6 = app.windows.otherElements["Column 6"].firstMatch
+        let column7 = app.windows.otherElements["Column 7"].firstMatch
 
+        column7.click()
+        column6.click()
+        column5.click()
+        column7.click()
+        column6.click()
+        column4.click()
+        column7.click()
+        column5.click()
+        column4.click()
+        column6.click()
+        column5.click()
+        column7.click()
+
+        XCTAssert(app.windows.otherElements["yellow"].exists)
+        XCTAssert(app.windows.staticTexts["won the game"].exists)
+    }
 }
