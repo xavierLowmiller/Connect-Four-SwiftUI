@@ -1,0 +1,7 @@
+language: swift
+osx_image: xcode11
+
+jobs:
+  include:
+    - script: xcodebuild test -scheme Connect-Four-SwiftUI
+      name: Tests
