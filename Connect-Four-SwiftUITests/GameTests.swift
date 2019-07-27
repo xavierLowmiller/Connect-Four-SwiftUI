@@ -12,7 +12,7 @@ import XCTest
 class GameTests: XCTestCase {
     func testInsertingShouldInsertACellAndToggleTheActivePlayer() {
         // Given
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
         let initiallyActivePlayer = game.activePlayer
 
         // When
@@ -73,7 +73,7 @@ class GameTests: XCTestCase {
      */
     func testHorizontalWinsShouldBeRecognized() {
         // Given
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
         let initiallyActivePlayer = game.activePlayer
 
         // When
@@ -99,7 +99,7 @@ class GameTests: XCTestCase {
      */
     func testVerticalWinsShouldBeRecognized() {
         // Given
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
         let initiallyActivePlayer = game.activePlayer
 
         // When
@@ -125,7 +125,7 @@ class GameTests: XCTestCase {
      */
     func testDiagonalAscendingWinsShouldBeRecognized() {
         // Given
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
         let initiallyActivePlayer = game.activePlayer
 
         // When
@@ -155,7 +155,7 @@ class GameTests: XCTestCase {
      */
     func testDiagonalDescendingWinsShouldBeRecognized() {
         // Given
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
         let initiallyActivePlayer = game.activePlayer
 
         // When
@@ -185,7 +185,7 @@ class GameTests: XCTestCase {
      */
     func testYellowWinShouldAlsoBePossible() {
         // Given
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
 
         // When
         game.insert(at: 6)
@@ -203,7 +203,7 @@ class GameTests: XCTestCase {
 
     func testResetShouldResetTheBoard() {
         // Given
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
         for _ in 0..<10 {
             game.insert(at: Int.random(in: 0..<game.board.count))
         }

@@ -14,7 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var window: NSWindow!
 
-    let game = Game(columns: 7, rows: 6)
+    let game = Game()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application

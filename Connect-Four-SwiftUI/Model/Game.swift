@@ -20,7 +20,7 @@ final class Game: BindableObject {
         didSet { willChange.send(()) }
     }
 
-    init(columns: Int, rows: Int) {
+    init(columns: Int = 7, rows: Int = 6) {
         let emptyRow = [Token](repeating: .empty, count: rows)
         board = [[Token]](repeating: emptyRow, count: columns)
     }

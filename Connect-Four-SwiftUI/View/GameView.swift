@@ -26,7 +26,7 @@ struct GameView : View {
 #if DEBUG
 struct GameView_Previews : PreviewProvider {
     static var previews: some View {
-        let game = Game(columns: 7, rows: 6)
+        let game = Game()
         game.insert(at: 2)
         game.insert(at: 2)
         game.insert(at: 2)
