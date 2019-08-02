@@ -9,16 +9,10 @@
 import SwiftUI
 import Combine
 
-final class Game: BindableObject {
+final class Game: ObservableObject {
 
-    let willChange = PassthroughSubject<Void, Never>()
-
-    private(set) var board: [[Token]] {
-        didSet { willChange.send(()) }
-    }
-    private(set) var activePlayer: Player = .red {
-        didSet { willChange.send(()) }
-    }
+    @Published private(set) var board: [[Token]]
+    @Published var activePlayer: Player = .red
 
     init(columns: Int = 7, rows: Int = 6) {
         let emptyRow = [Token](repeating: .empty, count: rows)

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct GameView : View {
-    @ObjectBinding var game: Game
+    @ObservedObject var game: Game
 
     var body: some View {
         Group {
@@ -17,7 +17,7 @@ struct GameView : View {
                 BoardView(game: game)
             } else {
                 WinnerView(winner: game.winner!)
-                    .tapAction { self.game.reset() }
+                    .onTapGesture { self.game.reset() }
             }
         }
     }

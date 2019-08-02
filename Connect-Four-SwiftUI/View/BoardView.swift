@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct BoardView : View {
-    @ObjectBinding var game: Game
+    @ObservedObject var game: Game
 
     var body: some View {
         VStack {
@@ -35,7 +35,7 @@ struct BoardView : View {
                             }
                         }
                     }
-                    .tapAction {
+                    .onTapGesture {
                         self.game.insert(at: xOffset)
                     }
                     .accessibility(label: Text("Column \(xOffset + 1)"))
