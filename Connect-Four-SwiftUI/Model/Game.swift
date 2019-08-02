@@ -85,10 +85,6 @@ final class Game: ObservableObject {
         }
         return nil
     }
-
-    func isColumnSelectable(_ column: Int) -> Bool {
-        return board[column].contains(.empty)
-    }
 }
 
 extension Game: CustomStringConvertible {

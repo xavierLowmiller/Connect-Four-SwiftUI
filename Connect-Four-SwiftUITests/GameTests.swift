@@ -43,15 +43,18 @@ class GameTests: XCTestCase {
     func testNonFullColumnsShouldBeSelectable() {
         // Given
         let game = Game(columns: 7, rows: 2)
+        let board = game.board
+        let activePlayer = game.activePlayer
 
         // When
         game.insert(at: 2)
 
         // Then
-        XCTAssert(game.isColumnSelectable(2))
+        XCTAssertNotEqual(game.board, board)
+        XCTAssertNotEqual(game.activePlayer, activePlayer)
     }
 
-    func testFullColumnsShouldNotBeSelectable() {
+    func testInsertingInFullColumnsShouldDoNothing() {
         // Given
         let game = Game(columns: 7, rows: 2)
 
@@ -60,7 +63,11 @@ class GameTests: XCTestCase {
         game.insert(at: 2)
 
         // Then
-        XCTAssertFalse(game.isColumnSelectable(2))
+        let board = game.board
+        let activePlayer = game.activePlayer
+        game.insert(at: 2)
+        XCTAssertEqual(game.board, board)
+        XCTAssertEqual(game.activePlayer, activePlayer)
     }
 
     /**
