@@ -9,22 +9,36 @@
 import SwiftUI
 
 struct WinnerView : View {
-    let winner: Player
+    @ObservedObject var game: Game
 
     var body: some View {
         VStack {
-            CellView(cell: winner == .red ? .red : .yellow)
-                .accessibility(label: Text(winner == .red ? "red" : "yellow"))
+            CellView(cell: self.game.winner == .red ? .red : .yellow)
+                .accessibility(label: Text(self.game.winner == .red ? "red" : "yellow"))
             Text("won the game")
                 .font(.largeTitle)
-        }.padding()
+            Button(action: {
+                self.game.reset()
+            }, label: { Text("Play Again") })
+        }
     }
 }
 
 #if DEBUG
 struct WinnerView_Previews : PreviewProvider {
+    static let game: Game = {
+        $0.insert(at: 0)
+        $0.insert(at: 1)
+        $0.insert(at: 0)
+        $0.insert(at: 1)
+        $0.insert(at: 0)
+        $0.insert(at: 1)
+        $0.insert(at: 0)
+        return $0
+    }(Game())
+
     static var previews: some View {
-        WinnerView(winner: .red)
+        WinnerView(game: game)
     }
 }
 #endif

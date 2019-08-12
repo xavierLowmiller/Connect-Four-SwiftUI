@@ -16,7 +16,7 @@ struct GameView : View {
             if game.winner == nil {
                 BoardView(game: game)
             } else {
-                WinnerView(winner: game.winner!)
+                WinnerView(game: game)
                     .onTapGesture { self.game.reset() }
             }
         }
