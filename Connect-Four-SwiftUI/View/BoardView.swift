@@ -19,7 +19,7 @@ struct BoardView : View {
                 Text(.nextPlayerText)
                     .font(.largeTitle)
                 CellView(cell: game.activePlayer == .red ? .red : .yellow)
-                    .accessibility(label: Text(game.activePlayer == .red ? "player_1_description" : "player_2_description"))
+                    .accessibility(label: Text(game.activePlayer == .red ? .player1Description : .player2Description))
                 Spacer()
             }.padding(.top, 25)
 
@@ -40,7 +40,7 @@ struct BoardView : View {
                     }
                     .accessibility(label: Text("Column \(xOffset + 1)"))
                     .accessibility(value: Text(column.accessibilityDescription))
-                    .accessibility(hint: Text("a11y_drop_hint_text"))
+                    .accessibility(hint: Text(.a11yDropHintText))
                     .accessibility(addTraits: .allowsDirectInteraction)
                     .accessibilityAction { self.game.insert(at: xOffset) }
                 }
