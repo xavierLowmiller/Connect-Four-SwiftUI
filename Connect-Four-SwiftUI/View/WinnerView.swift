@@ -14,12 +14,12 @@ struct WinnerView : View {
     var body: some View {
         VStack {
             CellView(cell: self.game.winner == .red ? .red : .yellow)
-                .accessibility(label: Text(self.game.winner == .red ? "red" : "yellow"))
-            Text("won the game")
+                .accessibility(label: Text(self.game.winner == .red ? "player_1_description" : "player_2_description"))
+            Text("winner_description")
                 .font(.largeTitle)
             Button(action: {
                 self.game.reset()
-            }, label: { Text("Play Again") })
+            }, label: { Text("button_title_play_again") })
         }
     }
 }

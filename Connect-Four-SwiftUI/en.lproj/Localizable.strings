@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  Connect-Four-SwiftUI
+
+  Created by Xaver Lohmüller on 18.08.19.
+  Copyright © 2019 Xaver Lohmüller. All rights reserved.
+*/
+
+"next_player_text" = "Up Next:";
+
+"player_1_description" = "red";
+
+"player_2_description" = "yellow";
+
+"winner_description" = "won the game";
+
+"a11y_drop_hint_text" = "Tap to drop your token";
+
+"button_title_play_again" = "Play again";
