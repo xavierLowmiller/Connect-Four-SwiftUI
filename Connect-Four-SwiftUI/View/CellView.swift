@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import AppKit
 
 struct CellView : View {
     let cell: Token
@@ -25,7 +26,7 @@ extension Token {
         switch self {
         case .red: return .red
         case .yellow: return .yellow
-        case .empty: return .white
+        case .empty: return Color(.windowBackgroundColor)
         }
     }
 }
