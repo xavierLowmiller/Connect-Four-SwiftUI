@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  Connect-Four-SwiftUI
+
+  Created by Xaver Lohmüller on 18.08.19.
+  Copyright © 2019 Xaver Lohmüller. All rights reserved.
+*/
+
+/* Next player header */
+"next_player_text" = "Nächster:";
+
+/* Player 2, mainly used for a11y */
+"player_1_description" = "rot";
+
+/* Player 2, mainly used for a11y */
+"player_2_description" = "gelb";
+
+/* An empty field, mainly used for a11y */
+"empty_description" = "leer";
+
+/* The game's winner */
+"winner_description" = "hat gewonnen";
+
+/* Accessibility hint to drop a token in the selected column */
+"a11y_drop_hint_text" = "Klicken um einen Stein zu legen";
+
+/* Asks if the game should be restarted */
+"button_title_play_again" = "Nochmal";

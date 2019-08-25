@@ -16,10 +16,10 @@ struct BoardView : View {
 
             HStack {
                 Spacer()
-                Text("Up next:")
+                Text(.nextPlayerText)
                     .font(.largeTitle)
                 CellView(cell: game.activePlayer == .red ? .red : .yellow)
-                    .accessibility(label: Text(game.activePlayer == .red ? "red" : "yellow"))
+                    .accessibility(label: Text(game.activePlayer == .red ? .player1Description : .player2Description))
                 Spacer()
             }.padding(.top, 25)
 
@@ -38,9 +38,9 @@ struct BoardView : View {
                     .onTapGesture {
                         self.game.insert(at: xOffset)
                     }
-                    .accessibility(label: Text("Column \(xOffset + 1)"))
+                    .accessibility(label: Text(String.localizedColumn(xOffset + 1)))
                     .accessibility(value: Text(column.accessibilityDescription))
-                    .accessibility(hint: Text("Tap to drop your token"))
+                    .accessibility(hint: Text(.a11yDropHintText))
                     .accessibility(addTraits: .allowsDirectInteraction)
                     .accessibilityAction { self.game.insert(at: xOffset) }
                 }
