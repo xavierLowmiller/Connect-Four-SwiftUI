@@ -22,6 +22,8 @@
 		4EA01B1322D0798100530C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EA01B1222D0798100530C22 /* AppDelegate.swift */; };
 		4ED124F123091BCA00152982 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4ED124F323091BCA00152982 /* Localizable.strings */; };
 		4ED124FF23092A0000152982 /* LocalizedStringKey+Connect-Four.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED124FE23092A0000152982 /* LocalizedStringKey+Connect-Four.swift */; };
+		4ED1250223092D9000152982 /* Token+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED1250123092D9000152982 /* Token+SwiftUI.swift */; };
+		4ED12504230931A300152982 /* String+Connect-Four.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED12503230931A300152982 /* String+Connect-Four.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		4EA01B1222D0798100530C22 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4ED124F223091BCA00152982 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4ED124FE23092A0000152982 /* LocalizedStringKey+Connect-Four.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizedStringKey+Connect-Four.swift"; sourceTree = "<group>"; };
+		4ED1250123092D9000152982 /* Token+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Token+SwiftUI.swift"; path = "../Model/Model+SwiftUI/Token+SwiftUI.swift"; sourceTree = "<group>"; };
+		4ED12503230931A300152982 /* String+Connect-Four.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Connect-Four.swift"; sourceTree = "<group>"; };
+		4EEC1C89231251DC003289C0 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +184,8 @@
 			children = (
 				4ED124F323091BCA00152982 /* Localizable.strings */,
 				4ED124FE23092A0000152982 /* LocalizedStringKey+Connect-Four.swift */,
+				4ED12503230931A300152982 /* String+Connect-Four.swift */,
+				4ED1250123092D9000152982 /* Token+SwiftUI.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -271,6 +278,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 4E4F4A8322D0786900D48C2D;
 			productRefGroup = 4E4F4A8D22D0786A00D48C2D /* Products */;
@@ -321,7 +329,9 @@
 				4ED124FF23092A0000152982 /* LocalizedStringKey+Connect-Four.swift in Sources */,
 				4EA01B0F22D0796700530C22 /* Game.swift in Sources */,
 				4EA01B1022D0796700530C22 /* Token.swift in Sources */,
+				4ED12504230931A300152982 /* String+Connect-Four.swift in Sources */,
 				4EA01B0A22D0791200530C22 /* WinnerView.swift in Sources */,
+				4ED1250223092D9000152982 /* Token+SwiftUI.swift in Sources */,
 				4EA01B1122D0796700530C22 /* Player.swift in Sources */,
 				4EA01B0822D0791200530C22 /* CellView.swift in Sources */,
 				4EA01B0722D0791200530C22 /* BoardView.swift in Sources */,
@@ -373,6 +383,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				4ED124F223091BCA00152982 /* en */,
+				4EEC1C89231251DC003289C0 /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

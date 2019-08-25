@@ -15,6 +15,8 @@ extension LocalizedStringKey {
 
     static let player2Description: LocalizedStringKey = "player_2_description"
 
+    static let emptyDescription: LocalizedStringKey = "empty_description"
+
     static let winnerDescription: LocalizedStringKey = "winner_description"
 
     static let a11yDropHintText: LocalizedStringKey = "a11y_drop_hint_text"

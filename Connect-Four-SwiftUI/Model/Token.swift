@@ -27,27 +27,4 @@ extension Token: CustomStringConvertible {
         case .empty: return "⚪️"
         }
     }
-
-    var accessibilityDescription: String {
-        switch self {
-        case .red: return "red"
-        case .yellow: return "yellow"
-        case .empty: return "empty"
-        }
-    }
-}
-
-extension Array where Element == Token {
-    var accessibilityDescription: String {
-        let filledElements = filter { $0 != .empty }
-
-        if filledElements.isEmpty {
-            return "empty"
-        } else {
-            return filledElements
-                .reversed()
-                .map { $0.accessibilityDescription }
-                .joined(separator: ", ")
-        }
-    }
 }

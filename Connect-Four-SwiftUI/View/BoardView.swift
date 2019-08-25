@@ -38,7 +38,7 @@ struct BoardView : View {
                     .onTapGesture {
                         self.game.insert(at: xOffset)
                     }
-                    .accessibility(label: Text("Column \(xOffset + 1)"))
+                    .accessibility(label: Text(String.localizedColumn(xOffset + 1)))
                     .accessibility(value: Text(column.accessibilityDescription))
                     .accessibility(hint: Text(.a11yDropHintText))
                     .accessibility(addTraits: .allowsDirectInteraction)
